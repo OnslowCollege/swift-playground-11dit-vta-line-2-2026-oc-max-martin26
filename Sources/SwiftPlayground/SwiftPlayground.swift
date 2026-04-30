@@ -17,12 +17,12 @@ struct SwiftPlayground {
           let subtracted2 = y - x
           let multiplied2 = y * x
           let divided2 = y / x
-          let remainder2 = y % xw
+          let remainder2 = y % x
 
-          print("\(x) + \(y) = \(added)")w
-          print("\(x) - \(y) = \(subtracted)"w)
+          print("\(x) + \(y) = \(added)")
+          print("\(x) - \(y) = \(subtracted)")
           print("\(x) * \(y) = \(multiplied)") 
-          print("\(x) / \(y) = \(divided)") w
+          print("\(x) / \(y) = \(divided)") 
           print("\(x) % \(y) = \(remainder)") 
     }
     }
