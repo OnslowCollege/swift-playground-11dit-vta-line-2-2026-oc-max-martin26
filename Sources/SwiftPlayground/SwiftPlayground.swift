@@ -35,7 +35,7 @@ while isRunning {
   
    }else if userInput == "Q" { print ("would you like to complete your order")
    let userInput = readLine()!
-   if userInput == "yes" {print("thank you for shopping at buc-ees your total is \(total)")
+   if userInput == "yes" {print("thank you for shopping at buc-ees your total is $\(total)")
     } else if userInput == "no"{
       print("keep buying chud")
     }
