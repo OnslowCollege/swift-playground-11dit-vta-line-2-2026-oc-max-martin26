@@ -36,8 +36,9 @@ if removedInvitee == ""{
 
 
 print("the invitees are")
-invitees for
-
+invitees.forEach(name in print(name)
+    }
+let numberOfInvitees = invitees.count
 
 
 
