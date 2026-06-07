@@ -5,23 +5,40 @@
 struct SwiftPlayground {
     static func main() {
 
-///yo this func is firee
-func directionsToTimesSquare ()  {
-
-print("Walk 4 mins to 34th St Herald Square train station.")
-print("Take the Northbound N, Q, R, or W train 1 stop.")
-print("Get off the Times Square 42nd Street stop.")
-print("Take lots of pictures! 📸")
-}
+var isRunning: Bool = true
+let birds: [String] = ["Tieke", "Kākā",  "Takahē", "Hihi", "Kiwi", "Pāteke", "Tūī", "Kererū"]
+let insects: [String] = ["Giant Wētā", "Tree Wētā", "Cave Wētā", "Putoko", "Pūngāwerewere", "Ngaokeoke", "Waemano", "Kapowai"]
+var species: [String] = []
 
 
-    directionsToTimesSquare()
+print("Welcome to Zelandia Tracker.")
+print("Did you see a bird or insect")
+var birdOrInsect = readLine()?.lowercased()
+if birdOrInsect == "bird"{
+    print ("which bird did you see ")
+    birds.enumerated().forEach { index, bird in
+    print("\(index + 1). \(bird)")
+    }
+    print ("Enter a number:")}
 
-let weight: Double = 55
-let height: Double = 1.67
-let BMI = weight / height * height
-func findBMI() {
-   
-    print(BMI)
-}
-    }}  
+
+
+    else if birdOrInsect == "insect"{
+        print("which insect did you see")
+        insects.enumerated().forEach { index, insect in
+        print("\(index + 1). \(insect)")
+        }
+        print("Enter a number:")}
+        
+    
+    else { 
+        print("this is not a valid response")
+        isRunning = false }
+    
+        
+    }
+
+    
+
+
+    } 
