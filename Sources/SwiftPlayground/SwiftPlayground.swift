@@ -12,6 +12,7 @@ var species: [String] = []
 
 
 print("Welcome to Zelandia Tracker.")
+while isRunning == true{
 print("Did you see a bird or insect")
 var birdOrInsect = readLine()?.lowercased()
 if birdOrInsect == "bird"{
@@ -19,7 +20,11 @@ if birdOrInsect == "bird"{
     birds.enumerated().forEach { index, bird in
     print("\(index + 1). \(bird)")
     }
-    print ("Enter a number:")}
+    print ("Enter a number:")
+   var birdInput = Int(readLine()!)!
+    species.append (birds[birdInput])}
+
+
 
 
 
@@ -28,16 +33,21 @@ if birdOrInsect == "bird"{
         insects.enumerated().forEach { index, insect in
         print("\(index + 1). \(insect)")
         }
-        print("Enter a number:")}
+        print("Enter a number:")
+        var insectInput = readLine()!.lowercased()
+        species.append(whichInsect)}
         
     
     else { 
         print("this is not a valid response")
         isRunning = false }
-    
-        
+    print("do you want to keep listing (Y/N)")
+   var yesOrNo = readLine()?.lowercased()
+    if yesOrNo == "y"{isRunning = true}
+    else if yesOrNo == "n"{print("here is what you saw",species,"thank you for coming to zelandia"); isRunning = false}
+    else {print("this is not a valid response"); isRunning = false}  
     }
-
+    }
     
 
 
