@@ -21,31 +21,36 @@ if birdOrInsect == "bird"{
     print("\(index + 1). \(bird)")
     }
     print ("Enter a number:")
-   var birdInput = Int(readLine()!)!
-    species.append (birds[birdInput])}
 
-
-
-
-
+    if let userInput = readLine(), var birdInput = Int(userInput), birdInput >= 1 && birdInput <= 8 { 
+        species.append (birds[birdInput])
+    }
+    
+    else { 
+        print("this is not a valid response")
+        isRunning = false }
+    }
     else if birdOrInsect == "insect"{
         print("which insect did you see")
         insects.enumerated().forEach { index, insect in
         print("\(index + 1). \(insect)")
         }
         print("Enter a number:")
-        var insectInput = readLine()!.lowercased()
-        species.append(whichInsect)}
-        
-    
+    if let userInput = readLine(), var insectInput = Int(userInput), insectInput >= 1 && insectInput <= 8 { 
+        species.append (insects[insectInput])
+    }
+    else { 
+        print("this is not a valid response")
+        isRunning = false }
+    }      
     else { 
         print("this is not a valid response")
         isRunning = false }
     print("do you want to keep listing (Y/N)")
-   var yesOrNo = readLine()?.lowercased()
+    var yesOrNo = readLine()?.lowercased()
     if yesOrNo == "y"{isRunning = true}
     else if yesOrNo == "n"{print("here is what you saw",species,"thank you for coming to zelandia"); isRunning = false}
-    else {print("this is not a valid response"); isRunning = false}  
+    else {print("this is not a valid response"); isRunning = false}
     }
     }
     
