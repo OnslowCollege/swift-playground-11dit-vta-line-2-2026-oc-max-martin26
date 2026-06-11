@@ -64,9 +64,4 @@ if birdOrInsect == "bird"{
     if yesOrNo == "y"{isRunning = true}
     else if yesOrNo == "n"{print("here is what you saw",species,"thank you for coming to zelandia"); isRunning = false}
     else {print("this is not a valid response"); isRunning = false}
-    }
-    }
-    
-
-
-    } 
+    }}} 
