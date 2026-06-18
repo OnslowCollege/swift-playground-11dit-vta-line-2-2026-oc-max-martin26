@@ -21,7 +21,7 @@ let x = (0)
     print("Enter a number:")
     let wakeTime = readLine()
 
-    let netSleep =   yo commit ts nigg
+    let netSleep = 
 
 
     }}
