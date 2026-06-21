@@ -6,8 +6,16 @@ struct SwiftPlayground {
     static func main() {
     
     var isRunning: Bool = true
-    let days: [String] = [""]
-        
+    let days: [String] = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday",]
+    var totalHours = 0
+
+    print("Welcome to Screen Time Tracker.")
+    while isRunning == true {
+    print("What is the hour limit set for each day? Enter a number:")
+    var dayLimit = readLine()
+    if dayLimit == >24 {}
+
+        } 
     
 
     }}
