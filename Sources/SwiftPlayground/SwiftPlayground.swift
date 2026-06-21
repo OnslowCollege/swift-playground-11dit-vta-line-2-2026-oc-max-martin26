@@ -12,9 +12,11 @@ struct SwiftPlayground {
     print("Welcome to Screen Time Tracker.")
     while isRunning == true {
     print("What is the hour limit set for each day? Enter a number:")
-    if let userInput = readLine(), var dayLimit = userInput(Int)
-
-        
+    if let userInput = readLine(), var dayLimit = Int(userInput), dayLimit >= 0 && dayLimit <= 24 {
+    print("your screentime limit for 1 day is" ,[dayLimit])
+    else print("daylimit invalid") }
     
+        
+
 
     }}
