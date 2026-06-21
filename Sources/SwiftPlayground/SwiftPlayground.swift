@@ -5,9 +5,9 @@
 struct SwiftPlayground {
     static func main() {
     
-    while isRunning ==true {
-
+    var isRunning: Bool = true
+    let days: [String] = [""]
         
-    }
+    
 
     }}
