@@ -22,7 +22,8 @@ struct SwiftPlayground {
         var dayLimit = 0
         //had to add this to remove magic numbers cause fahh
         let addAmount = 1
-        //this prints something
+        //how many days are in day list
+        let realCount = 6
         print("Welcome to Screen Time Tracker.")
 
         while isRunning == true {
@@ -34,7 +35,7 @@ struct SwiftPlayground {
             {
                 dayLimit += setLimit
                 print("your screentime limit for 1 day is", [dayLimit])
-    
+                dayadd()
             }
 
             //if type an invalid limit
@@ -43,15 +44,11 @@ struct SwiftPlayground {
                 isRunning = false
             }
 
-            //for loop to loop all the days
-            days.forEach {day in 
+            
+                func dayadd() {
+            
                 print("On", days[index], "how many hours did you spend on:")
-                timeSpentOnSocialMedia()}
-            
-
-            //this function prints a platform from the list and asks you how many hours you spent on it
-            
-            func timeSpentOnSocialMedia() {
+                
                 platforms.forEach {platform in
                 print(platforms[index2])
                 //this checks to see if you put in a valid amount of hours and if you did adds your hours to how long you have been on that day
@@ -71,25 +68,30 @@ struct SwiftPlayground {
             if index2 <= platforms.count {
                 index2 += addAmount
             }
-                
-
-            //once you have cycled through all the platforms this adds how many hours you were on that day to your total hours and then goes to the next day
-            //this repeats until you have done the whole week
-            else if index2 > platforms.count{
-                index2 = 0
-                print("Overall on", [index], "you spent", [totalDaysHours], "hours doom scrolling.")
+            }
+print("Overall on", days[index], "you spent", [totalDaysHours], "hours doom scrolling.")
+            index2 = 0   
+                totalHours += totalDaysHours
                 index += addAmount
                 totalHours += totalDaysHours
                 totalDaysHours = 0
+            if index == realCount {
+                finalTime()
             }
-            }}
+            //once you have cycled through all the platforms this adds how many hours you were on that day to your total hours and then goes to the next day
+            //this repeats until you have done the whole week
+                }
+                
+                (1...6).forEach {number in 
+            dayadd()
+                }
+            
+            
 
             //when you have finished the whole week this gives you your summary and lets you know if you were over or under the limit
-            if index >= days.count {
-                finalTime()
-
+            
             }
-
+        
             func finalTime() {
                 print("SUMMARY")
                 print("=—————=")
@@ -106,4 +108,4 @@ struct SwiftPlayground {
 
         }
     }
-}
+
