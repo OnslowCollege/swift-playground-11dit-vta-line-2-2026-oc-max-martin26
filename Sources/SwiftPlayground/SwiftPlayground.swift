@@ -23,7 +23,7 @@ struct SwiftPlayground {
         //had to add this to remove magic numbers cause fahh
         let addAmount = 1
         //how many days are in day list
-        let realCount = 6
+        let realCount = 7
         print("Welcome to Screen Time Tracker.")
 
         while isRunning == true {
@@ -34,7 +34,7 @@ struct SwiftPlayground {
             if let userInput = readLine(), var setLimit = Int(userInput),  setLimit >= 0 && setLimit <= 24
             {
                 dayLimit += setLimit
-                print("your screentime limit for 1 day is", [dayLimit])
+                print("your screentime limit for 1 day is", dayLimit)
                 dayadd()
             }
 
@@ -42,6 +42,7 @@ struct SwiftPlayground {
             else {
                 print("dayLimit invalid")
                 isRunning = false
+                
             }
 
             
@@ -69,17 +70,15 @@ struct SwiftPlayground {
                 index2 += addAmount
             }
             }
-print("Overall on", days[index], "you spent", [totalDaysHours], "hours doom scrolling.")
+print("Overall on", days[index], "you spent", totalDaysHours, "hours doom scrolling.")
             index2 = 0   
                 totalHours += totalDaysHours
                 index += addAmount
-                totalHours += totalDaysHours
                 totalDaysHours = 0
             if index == realCount {
                 finalTime()
             }
-            //once you have cycled through all the platforms this adds how many hours you were on that day to your total hours and then goes to the next day
-            //this repeats until you have done the whole week
+            
                 }
                 
                 (1...6).forEach {number in 
@@ -88,15 +87,15 @@ print("Overall on", days[index], "you spent", [totalDaysHours], "hours doom scro
             
             
 
-            //when you have finished the whole week this gives you your summary and lets you know if you were over or under the limit
             
+            //when you have finished the whole week this gives you your summary and lets you know if you were over or under the limit
             }
         
             func finalTime() {
                 print("SUMMARY")
                 print("=—————=")
-                print("- This week you spent", [totalHours], "hours doom scrolling")
-                print("- Average of", [totalHours / days.count], "hours per day")
+                print("- This week you spent", totalHours, "hours doom scrolling")
+                print("- Average of", totalHours / days.count, "hours per day")
                 let totalLimit = dayLimit * days.count
                 if totalHours > totalLimit {
                     print("Overall, your usage is OVER the limit!")
