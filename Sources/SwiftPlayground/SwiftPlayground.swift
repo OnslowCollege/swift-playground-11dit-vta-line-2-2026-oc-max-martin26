@@ -23,7 +23,7 @@ struct SwiftPlayground {
         //had to add this to remove magic numbers cause fahh
         let addAmount = 1
         //how many days are in day list
-        let realCount = 7
+        
         print("Welcome to Screen Time Tracker.")
 
         while isRunning == true {
@@ -35,19 +35,19 @@ struct SwiftPlayground {
             {
                 dayLimit += setLimit
                 print("your screentime limit for 1 day is", dayLimit)
-                dayadd()
+                
             }
 
             //if type an invalid limit
             else {
                 print("dayLimit invalid")
                 isRunning = false
-                
             }
+            
 
             
-                func dayadd() {
-            
+    
+            days.forEach {day in 
                 print("On", days[index], "how many hours did you spend on:")
                 
                 platforms.forEach {platform in
@@ -75,36 +75,26 @@ print("Overall on", days[index], "you spent", totalDaysHours, "hours doom scroll
                 totalHours += totalDaysHours
                 index += addAmount
                 totalDaysHours = 0
-            if index == realCount {
-                finalTime()
+            
             }
-            
-                }
                 
-                (1...6).forEach {number in 
-            dayadd()
-                }
-            
-            
-
             
             //when you have finished the whole week this gives you your summary and lets you know if you were over or under the limit
-            }
         
-            func finalTime() {
                 print("SUMMARY")
                 print("=—————=")
                 print("- This week you spent", totalHours, "hours doom scrolling")
                 print("- Average of", totalHours / days.count, "hours per day")
                 let totalLimit = dayLimit * days.count
-                if totalHours > totalLimit {
+            
+        }
+        let totalLimit = dayLimit * days.count
+            if totalHours > totalLimit {
                     print("Overall, your usage is OVER the limit!")
                 } else {
                     print("Overall, your usage is UNDER the limit!")
+                            }  
+                
+                    }
                 }
-
-            }
-
-        }
-    }
 
