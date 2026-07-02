@@ -93,8 +93,10 @@ struct SwiftPlayground {
         if valid == true {let totalLimit = dayLimit * days.count
             if totalHours > totalLimit {
                     print("Overall, your usage is OVER the limit!")
+                    valid = false
                 } else {
                     print("Overall, your usage is UNDER the limit!")
+                    valid = false
                             } }            
                     }
     }
