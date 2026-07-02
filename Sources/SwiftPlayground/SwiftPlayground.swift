@@ -46,12 +46,13 @@ struct SwiftPlayground {
             //for loop to run this code once for each day of the week
             if valid == true {days.forEach {day in 
             
-                print("On", days[index], "how many hours did you spend on:")           
+                if valid == true { print("On", days[index], "how many hours did you spend on:")           
                 platforms.forEach {platform in
+                if valid == true {
                 print(platforms[index2])
-                
+                }
                 //this checks to see if you put in a valid amount of hours and if you did adds your hours to how long you have been on that day
-                if let userInput = readLine(), var platformTime = Int(userInput),
+                if valid == true {if let userInput = readLine(), var platformTime = Int(userInput),
                     platformTime >= 0 && platformTime <= 24
                 {
                     totalDaysHours += platformTime
@@ -59,8 +60,8 @@ struct SwiftPlayground {
                 
                 //if you put in invalid hours
                 else {
-                    print("platformTime invalid")
-                    
+                    print("platformTime invalid")  
+                
                 valid = false
                 }
                 //if you put in an amount of hours that totals to greater then 24
@@ -69,26 +70,26 @@ struct SwiftPlayground {
                     
                     valid = false
                 }
-            
+                }
             //increases index for the platform string and reruns the function asking you how long you spend on that platform
-            if index2 <= platforms.count {
+            if index2 <= platforms.count && valid == true{
                 index2 += addAmount
             }
             }
      //tells you how long you were doomscrolling on that day and then adds that amount to your total hours and resets your total day hours
-    print("Overall on", days[index], "you spent", totalDaysHours, "hours doom scrolling.")
+    if valid == true {print("Overall on", days[index], "you spent", totalDaysHours, "hours doom scrolling.")
             index2 = 0   
                 totalHours += totalDaysHours
                 index += addAmount
                 totalDaysHours = 0   
-            }  
+            }}  }
             //when you have finished the whole week this gives you your summary and lets you know if you were over or under the limit
-                print("SUMMARY")
+            if valid == true { print("SUMMARY")
                 print("=—————=")
                 print("- This week you spent", totalHours, "hours doom scrolling")
                 print("- Average of", totalHours / days.count, "hours per day")
                 let totalLimit = dayLimit * days.count     
-            }
+            }}
         if valid == true {let totalLimit = dayLimit * days.count
             if totalHours > totalLimit {
                     print("Overall, your usage is OVER the limit!")
